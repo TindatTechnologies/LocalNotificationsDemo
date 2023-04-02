@@ -1,0 +1,7 @@
+{
+  "name": "lndemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
