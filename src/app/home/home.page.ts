@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LocalNotifications, ScheduleOptions } from '@capacitor/local-notifications';
+
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,4 +12,30 @@ import { IonicModule } from '@ionic/angular';
 })
 export class HomePage {
   constructor() {}
+
+  async onClick () {
+    let options: ScheduleOptions={
+      notifications:[
+        {
+          id:111,
+          title:"pepe",
+          body:"aaa",
+          largeBody:"Get",
+          summaryText:"qq!"
+        }
+      ]
+    }
+
+    try {
+      await LocalNotifications.schedule(options)
+    }
+    catch(ex) {
+      alert(JSON.stringify(ex));
+    }
+
+  }
+  
+
+
 }
+

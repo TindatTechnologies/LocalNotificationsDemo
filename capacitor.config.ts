@@ -4,7 +4,13 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'lndemo',
   webDir: 'www',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+
+  plugins: {
+    LocalNotifications: {
+      iconColor: "#488AFF",
+    },
+  },
 };
 
 export default config;
