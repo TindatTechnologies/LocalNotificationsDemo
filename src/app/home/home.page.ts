@@ -26,6 +26,8 @@ export class HomePage {
       ]
     }
 
+    await LocalNotifications.requestPermissions();
+    
     try {
       await LocalNotifications.schedule(options)
     }
@@ -35,6 +37,28 @@ export class HomePage {
 
   }
   
+  async onClick2 () {
+    let options2: ScheduleOptions={
+      notifications:[
+        {
+          id:111,
+          title:"francisco",
+          body:"aaa",
+          largeBody:"Get",
+          schedule: { at: new Date(Date.now() + 1000 * 5) },
+          summaryText:"qq!"
+        }
+      ]
+    }
+
+    try {
+      await LocalNotifications.schedule(options2)
+    }
+    catch(ex) {
+      alert(JSON.stringify(ex));
+    }
+
+  }
 
 
 }
